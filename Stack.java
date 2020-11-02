@@ -1,13 +1,13 @@
-public class Stack<T> {
+public class Stack<E> {
     private int size = 0;
     private StackNode topNode = new StackNode();
 
     public Stack(){}
 
-    void push(T data){
+    void push(E data){
         StackNode temp = new StackNode();
         temp.setData(data);
-        temp.setLowerStack(topNode);
+        temp.setLowerNode(topNode);
         topNode = temp;
         size++;
     }
@@ -37,7 +37,7 @@ public class Stack<T> {
         return size;
     }
 
-    public StackNode peek(){
-        return topNode;
+    public Object peek(){
+        return topNode.getData();
     }
 }
